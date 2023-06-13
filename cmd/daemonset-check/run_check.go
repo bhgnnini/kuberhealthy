@@ -396,8 +396,12 @@ func generateDaemonSetSpec(ctx context.Context) *appsv1.DaemonSet {
 							},
 							Resources: apiv1.ResourceRequirements{
 								Requests: apiv1.ResourceList{
-									apiv1.ResourceCPU:    resource.MustParse("0"),
-									apiv1.ResourceMemory: resource.MustParse("0"),
+									apiv1.ResourceCPU:    resource.MustParse("1"),
+									apiv1.ResourceMemory: resource.MustParse("1"),
+								},
+								Limits: apiv1.ResourceList{
+									apiv1.ResourceCPU:    resource.MustParse("1"),
+									apiv1.ResourceMemory: resource.MustParse("1"),
 								},
 							},
 						},
